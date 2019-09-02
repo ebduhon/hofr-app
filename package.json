@@ -2,12 +2,7 @@
   "name": "hofr-app",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "ng:serve:app-c9": "ng serve --host 0.0.0.0 --port 8080 --disableHostCheck"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +14,7 @@
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
+    "@ngrx/store": "^8.3.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
