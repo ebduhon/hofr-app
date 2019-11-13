@@ -1,10 +1,13 @@
 <p>product-list works!</p>
 
-<ul>
-  <li *ngFor="let product of products | async">
-    {{ product.id }}
-    {{ product.name }}
-  </li>
-</ul>
+<button mat-raised-button color="primary" (click)="addProduct('product name')">Add Product</button>
 
-<button mat-button color="primary" (click)="addProduct('product name')">Add Product</button>
+<mat-list>
+  <mat-list-item *ngFor="let product of products | async">
+    <h4 mat-line>{{ product.id }}</h4>
+    <p mat-line>{{ product.name }}</p>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>
+
+

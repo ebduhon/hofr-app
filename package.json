@@ -2,7 +2,8 @@
   "name": "hofr-app",
   "version": "0.0.0",
   "scripts": {
-    "ng:serve:app-c9": "ng serve --host 0.0.0.0 --port 8080 --disableHostCheck"
+    "ng:serve:app-c9": "ng serve --host 0.0.0.0 --port 8080 --disableHostCheck",
+    "ng:serve:app-local": "ng serve --host 0.0.0.0 --port 8080"
   },
   "private": true,
   "dependencies": {
