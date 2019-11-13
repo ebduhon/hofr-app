@@ -1,0 +1,10 @@
+<p>product-list works!</p>
+
+<ul>
+  <li *ngFor="let product of products | async">
+    {{ product.id }}
+    {{ product.name }}
+  </li>
+</ul>
+
+<button mat-button color="primary" (click)="addProduct('product name')">Add Product</button>
