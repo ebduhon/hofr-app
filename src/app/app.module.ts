@@ -13,7 +13,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
-
+import { MatIconModule } from '@angular/material/icon';
 
 
 import { StoreModule } from '@ngrx/store';
@@ -41,6 +41,7 @@ export const firebaseConfig = environment.firebase['houseoffourroses'];
     AngularFireStorageModule,
     MatButtonModule,
     MatListModule,
+    MatIconModule,
     StoreModule.forRoot({ count: counterReducer }),
     AppRoutingModule
   ],

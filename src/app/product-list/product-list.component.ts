@@ -23,12 +23,17 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     console.log('ngOnInit product-list');
   }
-  
-  addProduct(name: string) {
+
+  createProduct(name: string) {
     const id = this.afs.createId();
     const product: Product = { id, name };
-    
+
     this.productsCollection.doc(id).set(product);
+  }
+
+  deleteProduct(productId: string) {
+    console.log(productId);
+    this.productsCollection.doc(productId).delete();
   }
 
 }
