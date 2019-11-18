@@ -1,0 +1,12 @@
+<p>product-input works!</p>
+
+<form>
+  <mat-form-field>
+    <input matInput #newProductName
+    (keyup.enter)="addProduct(newProductName.value)"
+    (blur)="addProduct(newProductName.value); newProductName.value=''">
+  </mat-form-field>
+</form>
+
+
+<button mat-raised-button color="primary" (click)="addProduct(newProductName.value)">Add Product</button>

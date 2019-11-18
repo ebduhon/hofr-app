@@ -12,6 +12,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -22,6 +23,7 @@ import { counterReducer } from '../counter/counter.reducer';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { ProductInputComponent } from './product-input/product-input.component';
 import { MyCounterComponent } from './my-counter/my-counter.component';
 
 import { environment } from '../environments/environment';
@@ -40,6 +42,7 @@ export const firebaseConfig = environment.firebase['houseoffourroses'];
     AngularFirestoreModule,
     AngularFireStorageModule,
     MatButtonModule,
+    MatInputModule,
     MatListModule,
     MatIconModule,
     StoreModule.forRoot({ count: counterReducer }),
@@ -48,7 +51,8 @@ export const firebaseConfig = environment.firebase['houseoffourroses'];
   declarations: [
     AppComponent,
     MyCounterComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductInputComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

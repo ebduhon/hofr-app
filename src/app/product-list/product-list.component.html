@@ -1,12 +1,12 @@
 <p>product-list works!</p>
 
-<button mat-raised-button color="primary" (click)="createProduct('product name')">Create Product</button>
-
 <mat-list>
   <mat-list-item *ngFor="let product of products | async">
     <h4 mat-line>{{ product.id }}</h4>
     <p mat-line>{{ product.name }}</p>
-    <button mat-raised-button color="warn" (click)="deleteProduct(product.id)">DELETE</button>
+    <button mat-icon-button color="warn" (click)="deleteProduct(product.id)">
+      <mat-icon>close</mat-icon>
+    </button>
     <mat-divider></mat-divider>
   </mat-list-item>
 </mat-list>

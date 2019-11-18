@@ -6,27 +6,28 @@ import { Observable } from 'rxjs';
 import { Product } from '../product/product.interface';
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  selector: 'app-product-input',
+  templateUrl: './product-input.component.html',
+  styleUrls: ['./product-input.component.scss']
 })
-export class ProductListComponent implements OnInit {
+export class ProductInputComponent implements OnInit {
 
   productsCollection: AngularFirestoreCollection<Product>;
-  products: Observable<Product[]>;
 
   constructor(private readonly afs: AngularFirestore) {
     this.productsCollection = afs.collection<Product>('products');
-    this.products = this.productsCollection.valueChanges();
   }
 
   ngOnInit() {
-    console.log('ngOnInit product-list');
+    console.log('ngOnInit product-input');
   }
 
-  deleteProduct(productId: string) {
-    console.log(productId);
-    this.productsCollection.doc(productId).delete();
-  }
+  addProduct(name: string) {
+    if (name) {
+      const id = this.afs.createId();
+      const product: Product = { id, name };
 
+      this.productsCollection.doc(id).set(product);
+    }
+  }
 }
