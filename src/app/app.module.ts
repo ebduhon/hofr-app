@@ -26,9 +26,12 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductInputComponent } from './product-input/product-input.component';
 import { MyCounterComponent } from './my-counter/my-counter.component';
 
+import { DropzoneDirective } from './dropzone.directive';
+import { UploaderComponent } from './uploader/uploader.component';
+import { UploadTaskComponent } from './upload-task/upload-task.component';
+
 import { environment } from '../environments/environment';
 export const firebaseConfig = environment.firebase['houseoffourroses'];
-
 
 @NgModule({
   imports: [
@@ -52,7 +55,10 @@ export const firebaseConfig = environment.firebase['houseoffourroses'];
     AppComponent,
     MyCounterComponent,
     ProductListComponent,
-    ProductInputComponent
+    ProductInputComponent,
+    DropzoneDirective,
+    UploaderComponent,
+    UploadTaskComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,30 @@
+<p>uploader works!</p>
+
+<div class="dropzone"
+  dropzone
+  (hovered)="toggleHover($event)"
+  (dropped)="onDrop($event)"
+  [class.hovering]="isHovering">
+
+    <h4>AngularFire Drop Zone</h4>
+    <p>Drag and Drop a File</p>
+    <div class="file">
+      <label class="file-label">
+      <input class="file-input" type="file" (change)="onDrop($event.target.files)">
+        <span class="file-cta">
+          <span class="file-icon">
+            <mat-icon>add</mat-icon>
+          </span>
+          <span class="file-label">
+            or choose a file...
+          </span>
+        </span>
+      </label>
+    </div>
+</div>
+
+<h3>Uploads</h3>
+
+<div *ngFor="let file of files">
+  <upload-task [file]="file"></upload-task>
+</div>
