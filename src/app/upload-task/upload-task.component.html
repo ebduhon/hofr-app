@@ -11,7 +11,9 @@
   <div *ngIf="downloadURL as url">
     <h3>Results!</h3>
     <img [src]="url"><br>
-    <a [href]="url" target="_blank" rel="noopener">Download me!</a>
+    <a [href]="url" target="_blank" rel="noopener">
+      <mat-icon>save_alt</mat-icon>Download
+    </a>
   </div>
 
   <hr>

@@ -31,6 +31,7 @@ import { UploaderComponent } from './uploader/uploader.component';
 import { UploadTaskComponent } from './upload-task/upload-task.component';
 
 import { environment } from '../environments/environment';
+import { DashboardComponent } from './dashboard/dashboard.component';
 export const firebaseConfig = environment.firebase['houseoffourroses'];
 
 @NgModule({
@@ -58,7 +59,8 @@ export const firebaseConfig = environment.firebase['houseoffourroses'];
     ProductInputComponent,
     DropzoneDirective,
     UploaderComponent,
-    UploadTaskComponent
+    UploadTaskComponent,
+    DashboardComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
