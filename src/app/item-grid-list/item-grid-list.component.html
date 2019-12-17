@@ -1,0 +1,39 @@
+<p>item-grid-list works!</p>
+
+<div *ngIf="items$ | async; let items; else loading">
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let item of items">
+      id: {{ item.id }}
+      <br>
+      name: {{ item.name }}
+      <br>
+      description: {{ item.description }}
+      <br>
+      size: {{ item.size }}
+      <br>
+      color: {{ item.color }}
+      <br>
+    </mat-grid-tile>
+    <br>
+  </mat-grid-list>
+  <div *ngIf="items.length === 0">No results, try clearing filters</div>
+</div>
+<ng-template #loading>Loading&hellip;</ng-template>
+<div>
+  <h4>Filter by size</h4>
+  <button (click)="filterBySize('small')">Small</button>
+  <button (click)="filterBySize('medium')">Medium</button>
+  <button (click)="filterBySize('large')">Large</button>
+  <button (click)="filterBySize(null)" *ngIf="this.sizeFilter$.getValue()">
+    <em>clear filter</em>
+  </button>
+</div>
+<div>
+  <h4>Filter by color</h4>
+  <button (click)="filterByColor('red')">Red</button>
+  <button (click)="filterByColor('green')">Green</button>
+  <button (click)="filterByColor('blue')">Blue</button>
+  <button (click)="filterByColor(null)" *ngIf="this.colorFilter$.getValue()">
+    <em>clear filter</em>
+  </button>
+</div>

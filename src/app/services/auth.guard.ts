@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { 
-  CanActivate, 
-  ActivatedRouteSnapshot, 
-  RouterStateSnapshot, 
+import {
+  CanActivate,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
   UrlTree,
   Router
 } from '@angular/router';
@@ -27,10 +27,11 @@ export class AuthGuard implements CanActivate {
       tap(loggedIn => {
         if (!loggedIn) {
           console.log('access denied');
+          /** TODO: Navigate to login page **/
           this.router.navigate(['/']);
         }
       })
     );
   }
-  
+
 }

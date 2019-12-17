@@ -25,9 +25,14 @@ export class ProductInputComponent implements OnInit {
   addProduct(name: string) {
     if (name) {
       const id = this.afs.createId();
-      const product: Product = { id, name };
+      const description = '';
+      const category = '';
+      const price = 0;
+      const product: Product = { id, name, description, category, price };
 
       this.productsCollection.doc(id).set(product);
+      console.log('Set product.');
+      console.log(product);
     }
   }
 }
