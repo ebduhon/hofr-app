@@ -12,11 +12,12 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatTableModule } from '@angular/material/table';
 
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from '../counter/counter.reducer';
@@ -26,6 +27,7 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductGridListComponent } from './product-grid-list/product-grid-list.component';
 import { ProductInputComponent } from './product-input/product-input.component';
+import { ProductTableComponent } from './product-table/product-table.component';
 import { MyCounterComponent } from './my-counter/my-counter.component';
 import { ItemGridListComponent } from './item-grid-list/item-grid-list.component';
 
@@ -34,6 +36,8 @@ import { UploaderComponent } from './uploader/uploader.component';
 import { UploadTaskComponent } from './upload-task/upload-task.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { ProductService } from './services/product.service';
 
 import { environment } from '../environments/environment';
 
@@ -51,10 +55,12 @@ export const firebaseConfig = environment.firebase['houseoffourroses'];
     AngularFirestoreModule,
     AngularFireStorageModule,
     MatButtonModule,
+    MatCardModule,
     MatInputModule,
     MatListModule,
     MatGridListModule,
     MatIconModule,
+    MatTableModule,
     StoreModule.forRoot({ count: counterReducer }),
     AppRoutingModule
   ],
@@ -64,13 +70,17 @@ export const firebaseConfig = environment.firebase['houseoffourroses'];
     ProductListComponent,
     ProductGridListComponent,
     ProductInputComponent,
+    ProductTableComponent,
     ItemGridListComponent,
     DropzoneDirective,
     UploaderComponent,
     UploadTaskComponent,
     DashboardComponent
+
   ],
-  providers: [],
+  providers: [
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
